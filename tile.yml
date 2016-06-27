@@ -1,0 +1,44 @@
+---
+name: aerospike-service-broker
+label: Aeropsike Service Broker
+description: Service broker to manage an Aerospike database cluster
+icon_file: resources/aerospike.png
+
+# Global defaults (all optional)
+# org: test-org                       # Optional
+# space: test-space                   # Optional
+org_quota: 4096                       # Optional, memory quota in mb
+apply_open_security_group: true       # Apply open security group, default: false
+allow_paid_service_plans: true        # Allow paid service plans, default: false
+
+forms:
+- name: aerospike-config-form
+  label: Aerospike Configuration
+  description: Custom Properties for Aerospike
+  properties:
+  - name: aerospike_db_host
+    type: string
+    label: Aerospike DB Host
+    value: localhost
+  - name: aerospike_db_port
+    type: integer
+    label: Aerospike DB Port
+    value: 3000 
+  - name: aerospike_license_type
+    type: dropdown_select
+    label: Aerospike License type
+    value: community
+    options: 
+      - name: community
+        label: 'Community'
+      - name: enterprise
+        label: 'Enterprise'
+ 
+packages:
+- name: service-broker1               # Broker with minimal configuration, i.e. all default values
+  type: app-broker
+  enable_global_access_to_plans: true
+  manifest:
+    path: resources/service-broker-0.0.1-SNAPSHOT.jar
+    memory: 512M                      # Override memory, default: 1G
+
