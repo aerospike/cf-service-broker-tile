@@ -16,6 +16,10 @@ This will create an ```aerospike-service-broker-X.X.X.pivotal``` file in the pro
 
 The Service Broker tile has an "Aerospike Configuration" tab that is used to configure the service broker to point to the existing Aerospike DB. On that tab, fill in the hostname and port of the Aerospike cluster and also select the license type (community or enterprise).
 
+The Service Broker tile requires that the Aerospike database have a namespace ```cf_admin``` configured. Registering the broker will fail if the ```cf_admin``` namespace doesn't exist. The broker uses this namespace to store service entities and serice binding entities.
+
+The Service Broker will expose all namesapaces (except the ```cf_admin``` namespace) as plans which can be used for creating services.
+
 ### Example Application
 
 See the [Aerospike Cloud Foundry Example Application](https://github.com/aerospike/cf-example-application.git) to see an application that uses the service broker to bind/unbind to an Aerospike database.
