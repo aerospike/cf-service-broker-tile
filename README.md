@@ -4,13 +4,16 @@ This project creates a Pivotal Cloud Foundry Service Broker tile that can be use
 
 ### Getting Started
 
+#### Option 1: Install Pre-built Tile
+1. Import the ```aerospike-service-broker-X.X.X.pivotal``` tile from the root directory of this project into Cloud Foundry via the Ops Manager
+
+#### Option 2: Build the Tile
 1. Clone the [Aerospike Service Broker](https://github.com/aerospike/cf-aerospike-service-broker.git) project and from the root directory of the project run ```gradle assemble```
 2. Copy build/library/service-broker-0.0.1-SNAPSHOT.jar from the Aerospike Service Broker project to the ```resources``` directory of this project
 3. Clone the [Pivotal Tile Generator](https://github.com/cf-platform-eng/tile-generator) project
 4. Add the bin directory from the Pivotal Tile Generator project to the path (macOS: ```export PATH=$PATH:/pathToTileGeneratorProject/bin```)
 5. Run ```tile build``` from the root directory of this project
-
-This will create an ```aerospike-service-broker-X.X.X.pivotal``` file in the product directory. This is the service broker tile that can be uploaded into Pivotal Cloud Foundry.
+6. This will create an ```aerospike-service-broker-X.X.X.pivotal``` file in the product directory. This is the service broker tile that can be imported into Pivotal Cloud Foundry.
 
 ### Configuration
 
