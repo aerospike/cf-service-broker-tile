@@ -19,7 +19,6 @@ forms:
   - name: aerospike_db_host
     type: string
     label: Aerospike DB Host
-    value: localhost
   - name: aerospike_db_port
     type: integer
     label: Aerospike DB Port
@@ -33,12 +32,20 @@ forms:
         label: 'Community'
       - name: enterprise
         label: 'Enterprise'
- 
+  - name: aerospike_admin_namespace
+    type: string
+    label: Aerospike Admin Namespace
+  - name: aerospike_admin_user
+    type: string
+    label: Aerospike User
+  - name: aerospike_admin_password
+    type: secret
+    label: Aerospike Password
 packages:
-- name: service-broker1               # Broker with minimal configuration, i.e. all default values
+- name: aerospike-service-broker               # Broker with minimal configuration, i.e. all default values
   type: app-broker
   enable_global_access_to_plans: true
   manifest:
-    path: resources/service-broker-0.0.1-SNAPSHOT.jar
+    path: resources/service-broker-0.1.0.jar
     memory: 512M                      # Override memory, default: 1G
 
