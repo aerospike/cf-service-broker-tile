@@ -1,6 +1,6 @@
 ---
 name: aerospike-service-broker
-label: Aeropsike Service Broker
+label: Aerospike Service Broker
 description: Service broker to manage an Aerospike database cluster
 icon_file: resources/aerospike.png
 
@@ -46,6 +46,6 @@ packages:
   type: app-broker
   enable_global_access_to_plans: true
   manifest:
-    path: resources/service-broker-0.1.0.jar
+    path: resources/service-broker-0.1.1.jar
     memory: 512M                      # Override memory, default: 1G
 
