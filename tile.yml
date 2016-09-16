@@ -11,6 +11,20 @@ org_quota: 4096                       # Optional, memory quota in mb
 apply_open_security_group: true       # Apply open security group, default: false
 allow_paid_service_plans: true        # Allow paid service plans, default: false
 
+properties:
+- name: aerospike_service_id
+  type: string
+  label: Aerospike Service Id
+  value: aerospike-sb
+- name: aerospike_service_name
+  type: string
+  label: Aerospike Service Namespace
+  value: aerospike-sb
+- name: aerospike_service_description
+  type: string
+  label: Aerospike Service Description
+  value: Service Broker implementation for an Aerospike database
+
 forms:
 - name: aerospike-config-form
   label: Aerospike Configuration
@@ -46,6 +60,6 @@ packages:
   type: app-broker
   enable_global_access_to_plans: true
   manifest:
-    path: resources/service-broker-0.1.1.jar
+    path: resources/service-broker-0.1.3.jar
     memory: 512M                      # Override memory, default: 1G
 
