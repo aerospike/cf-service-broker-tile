@@ -60,6 +60,6 @@ packages:
   type: app-broker
   enable_global_access_to_plans: true
   manifest:
-    path: resources/service-broker-0.1.3.jar
+    path: resources/service-broker-0.1.5.jar
     memory: 512M                      # Override memory, default: 1G
 
