@@ -61,6 +61,6 @@ packages:
   enable_global_access_to_plans: true
   manifest:
     path: resources/service-broker-0.1.5.jar
-    memory: 512M                      # Override memory, default: 1G
+    memory: 1G                      # Override memory, default: 1G
     buildpack: java_buildpack_offline
 
